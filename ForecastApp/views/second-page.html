@@ -1,0 +1,17 @@
+
+<div class="container second-page" ng-controller="secondPageController" >
+
+    <div class="starter-template">
+        <h1>Forecast for {{weatherResult.city.name}}</h1>
+        <ul  class="list-group">
+            <li class="list-group-item active" ng-repeat="day in weatherResult.list">
+
+                <h2>Date: {{day.dt * 1000 | date: 'fullDate'}}</h2>
+                <p>At day {{day.temp.day}} °C</p>
+                <p>At night {{day.temp.night}} °C</p>
+                <p>Weather: {{day.weather[0].description}} <img alt="{{day.weather[0].description}}" ng-src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png"></p>
+            </li>
+        </ul>
+    </div>
+
+</div>
