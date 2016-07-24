@@ -1,0 +1,50 @@
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="jquery-3.0.0.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div class="wrap" ng-controller="mainController">
+
+    <header>
+       <div class="container">
+        <a href="#"><img src="./logo.png" alt="logo"/></a>
+       </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <input class="search" placeholder="Search" ng-model="handle" autofocus/>
+                <div class="article-list">
+                <article ng-repeat="player in players | filter : filterFunction | orderBy : '-strLength'" class="player-list-item">
+                    <h4>Name: {{player.name}}</h4>
+                    <p><span class="title">Position:</span> {{player.position}}</p>
+                    <p><span class="title">Jersey Number:</span> {{player.jerseyNumber}}</p>
+                    <p><span class="title">Date of Birth:</span> {{player.dateOfBirth}}</p>
+                    <p><span class="title">Nationality:</span> {{player.nationality}}</p>
+                    <p><span class="title">Contract Until:</span> {{player.contractUntil}}</p>
+                    <p><span class="title">Market Value:</span> {{player.marketValue}}</p>
+                </article>
+            </div>
+        </div>
+
+        </section>
+
+   <footer>
+       <div class="container">
+           <ul>
+               <li><a href="#">HELP</a></li>
+               <li><a href="#">OUR TEAM</a></li>
+               <li><a href="#">CONTACT US</a></li>
+           </ul>
+       </div>
+   </footer>
+
+</div>
+</body>
+</html>
